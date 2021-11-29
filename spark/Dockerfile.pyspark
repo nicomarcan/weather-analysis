@@ -1,0 +1,28 @@
+ARG SPARK_VERSION=2.4.5
+FROM arjones/spark:${SPARK_VERSION}
+
+WORKDIR /notebook
+
+COPY requirements.txt /tmp/ 
+
+RUN apt-get update
+
+RUN apt-get install libffi-dev
+
+RUN apt-get update && \
+  apt-get --no-install-recommends --no-install-suggests install -y \
+  python3 python3-pip python3-setuptools python3-distutils python3-dev libc-dev build-essential && \
+  update-alternatives --install /usr/bin/python python /usr/bin/python3.7 10 && \
+  python -m pip install --upgrade pip &&\
+  python -m pip install --upgrade pillow &&\
+  pip3 install --user Cython &&\
+  pip3 install --user wheel &&\
+  pip3 install --user cffi &&\
+  pip3 install --no-cache-dir --default-timeout=120 -r /tmp/requirements.txt && \
+  apt-get autoremove -y && \
+  rm -rvf /tmp/requirements.txt /var/lib/apt/lists/*
+
+CMD [ "/usr/local/bin/jupyter", "notebook", "--allow-root", "--no-browser", "--ip=0.0.0.0"]
+
+EXPOSE 8888
+
