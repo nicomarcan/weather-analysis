@@ -43,7 +43,9 @@ Una vez levantado, proceder a realizar lo siguiente en las distintas herramienta
 ## Crear conexión con base de datos de info climática
 
 ~~~
-
+Ver paso a paso en las siguientes imágenes
 ~~~
+
+## Importar dashboard.json (ver imágenes)
 
 
