@@ -12,8 +12,10 @@ from airflow.hooks.base_hook import BaseHook
 from airflow.operators.python_operator import PythonOperator
 from airflow.operators.postgres_operator import PostgresOperator
 from psql_cli import PsqlClient
+import time
 
-BASE_URL = 'https://api.openweathermap.org/data/2.5/onecall'
+
+BASE_URL = 'https://history.openweathermap.org/data/2.5/history/city'
 API_KEY = '44512c3fcb195eeaea99742342f8d292'
 
 SQL_TABLE = 'weather_daily'
@@ -21,8 +23,8 @@ SQL_CREATE = f"""
 CREATE TABLE IF NOT EXISTS {SQL_TABLE} (
 dt integer,
 province TEXT,
-temp_max REAL,
-temp_min REAL,
+temp_max decimal(16,2),
+temp_min decimal(16,2),
 weather_main TEXT,
 weather_desc TEXT,
 UNIQUE(dt,province)
@@ -58,21 +60,26 @@ PROVINCES = {'BUENOS_AIRES': {
 }
 }
 
+def kelvin_to_celsius(kevin):
+    return float("{:.2f}".format(float(kevin) - 273,15))
+
 
 def _get_weather_data(province, lat, lon, **context):
+    now = int( time.time() )
+    start = 1610788777 #hardcoded
     end_point = (
-        f"{BASE_URL}?&lat={lat}&lon={lon}&appid={API_KEY}&exclude=minutely,hourly&units=metric&lang=es"
+        f"{BASE_URL}?&lat={lat}&lon={lon}&appid={API_KEY}&cnt=168"
     )
     print(f"Getting data from {end_point}...")
     r = requests.get(end_point)
     sleep(15)  # To avoid api limits
     data = json.loads(r.content)
-    df = (pd.DataFrame.from_dict(data['daily'], orient='columns'))
+    df = (pd.DataFrame.from_dict(data['list'], orient='columns'))
     df['province'] = province
     df['weather_main'] = df['weather'].apply(lambda x: x[0]['main'])
     df['weather_desc'] = df['weather'].apply(lambda x: x[0]['description'])
-    df['temp_max'] = df['temp'].apply(lambda x: x['max'])
-    df['temp_min'] = df['temp'].apply(lambda x: x['min'])
+    df['temp_max'] = df['main'].apply(lambda x: kelvin_to_celsius(x['temp_max']))
+    df['temp_min'] = df['main'].apply(lambda x: kelvin_to_celsius(x['temp_min']))
     df = df[['dt', 'province', 'temp_max', 'temp_min','weather_main', 'weather_desc']]
     return df
 

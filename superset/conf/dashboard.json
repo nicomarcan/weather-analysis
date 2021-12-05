@@ -1,0 +1,273 @@
+{
+    "dashboards": [
+        {
+            "__Dashboard__": {
+                "css": "",
+                "dashboard_title": "Weather",
+                "description": null,
+                "json_metadata": "{\"timed_refresh_immune_slices\": [], \"expanded_slices\": {}, \"refresh_frequency\": 0, \"default_filters\": \"{}\", \"color_scheme\": null, \"remote_id\": 1, \"import_time\": 1638226507}",
+                "position_json": "{\"CHART-5_c3Q2MqFZ\": {\"children\": [], \"id\": \"CHART-5_c3Q2MqFZ\", \"meta\": {\"chartId\": 1, \"height\": 50, \"sliceName\": \"Avg Temperature by province and weather\", \"uuid\": \"27cd4e26-3d14-4a80-b89c-a1b41696c481\", \"width\": 8}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-4Sy3ydl68f\"], \"type\": \"CHART\"}, \"CHART-JPmIb4i7b2\": {\"children\": [], \"id\": \"CHART-JPmIb4i7b2\", \"meta\": {\"chartId\": 5, \"height\": 50, \"sliceName\": \"Weather distribution\", \"uuid\": \"fc9a5b9b-51b0-4ede-af55-83181e998a2e\", \"width\": 4}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-4Sy3ydl68f\"], \"type\": \"CHART\"}, \"CHART-NViotyDHUd\": {\"children\": [], \"id\": \"CHART-NViotyDHUd\", \"meta\": {\"chartId\": 4, \"height\": 50, \"sliceName\": \"Min temp by province\", \"uuid\": \"fc2e1254-e602-484d-84c9-ea70b7a213ef\", \"width\": 4}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-X8IglDZBb3\"], \"type\": \"CHART\"}, \"CHART-aEjclrZJWG\": {\"children\": [], \"id\": \"CHART-aEjclrZJWG\", \"meta\": {\"chartId\": 2, \"height\": 50, \"sliceName\": \"Avg temp by province\", \"uuid\": \"35ebdc38-886e-4b6f-a792-81ff9d5172d0\", \"width\": 4}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-X8IglDZBb3\"], \"type\": \"CHART\"}, \"CHART-hJgUED8QO3\": {\"children\": [], \"id\": \"CHART-hJgUED8QO3\", \"meta\": {\"chartId\": 3, \"height\": 50, \"sliceName\": \"Max temp by province\", \"uuid\": \"971969d7-6e82-492b-b2c6-4222d3804f34\", \"width\": 4}, \"parents\": [\"ROOT_ID\", \"GRID_ID\", \"ROW-X8IglDZBb3\"], \"type\": \"CHART\"}, \"DASHBOARD_VERSION_KEY\": \"v2\", \"GRID_ID\": {\"children\": [\"ROW-X8IglDZBb3\", \"ROW-4Sy3ydl68f\"], \"id\": \"GRID_ID\", \"parents\": [\"ROOT_ID\"], \"type\": \"GRID\"}, \"HEADER_ID\": {\"id\": \"HEADER_ID\", \"meta\": {\"text\": \"Weather\"}, \"type\": \"HEADER\"}, \"ROOT_ID\": {\"children\": [\"GRID_ID\"], \"id\": \"ROOT_ID\", \"type\": \"ROOT\"}, \"ROW-4Sy3ydl68f\": {\"children\": [\"CHART-5_c3Q2MqFZ\", \"CHART-JPmIb4i7b2\"], \"id\": \"ROW-4Sy3ydl68f\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"type\": \"ROW\"}, \"ROW-X8IglDZBb3\": {\"children\": [\"CHART-aEjclrZJWG\", \"CHART-NViotyDHUd\", \"CHART-hJgUED8QO3\"], \"id\": \"ROW-X8IglDZBb3\", \"meta\": {\"background\": \"BACKGROUND_TRANSPARENT\"}, \"parents\": [\"ROOT_ID\", \"GRID_ID\"], \"type\": \"ROW\"}}",
+                "slices": [
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "weather.weather_daily",
+                            "datasource_type": "table",
+                            "id": 1,
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": false, \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [\"weather_main\"], \"datasource\": \"1__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"province\"], \"label_colors\": {}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG((temp_max+temp_min)/2)\", \"optionName\": \"metric_0hc1z03lf09r_yzs6db7wr4c\", \"sqlExpression\": \"AVG((temp_max+temp_min)/2)\"}], \"order_bars\": true, \"order_desc\": true, \"row_limit\": 100, \"show_bar_value\": true, \"show_legend\": true, \"slice_id\": 1, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"y_axis_showminmax\": false, \"remote_id\": 1, \"datasource_name\": \"weather_daily\", \"schema\": \"weather\", \"database_name\": \"PostgreSQL\", \"import_time\": 1638226507}",
+                            "query_context": "{\"datasource\":{\"id\":1,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"province\",\"weather_main\"],\"metrics\":[{\"expressionType\":\"SQL\",\"sqlExpression\":\"AVG((temp_max+temp_min)/2)\",\"column\":null,\"aggregate\":null,\"isNew\":false,\"hasCustomLabel\":false,\"label\":\"AVG((temp_max+temp_min)/2)\",\"optionName\":\"metric_0hc1z03lf09r_yzs6db7wr4c\"}],\"annotation_layers\":[],\"row_limit\":100,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Avg Temperature by province and weather",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "weather.weather_daily",
+                            "datasource_type": "table",
+                            "id": 2,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"d3Category20b\", \"columns\": [], \"datasource\": \"1__table\", \"extra_form_data\": {}, \"groupby\": [\"province\"], \"label_colors\": {}, \"metrics\": [{\"aggregate\": null, \"column\": null, \"expressionType\": \"SQL\", \"hasCustomLabel\": true, \"isNew\": false, \"label\": \"avg_temp\", \"optionName\": \"metric_jppzoe48rtk_pwwtpjpnqrm\", \"sqlExpression\": \"AVG((temp_max+temp_min)/2)\"}], \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"show_legend\": true, \"slice_id\": 2, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 2, \"datasource_name\": \"weather_daily\", \"schema\": \"weather\", \"database_name\": \"PostgreSQL\", \"import_time\": 1638226507}",
+                            "query_context": "{\"datasource\":{\"id\":1,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"province\"],\"metrics\":[{\"expressionType\":\"SQL\",\"sqlExpression\":\"AVG((temp_max+temp_min)/2)\",\"column\":null,\"aggregate\":null,\"isNew\":false,\"hasCustomLabel\":true,\"label\":\"avg_temp\",\"optionName\":\"metric_jppzoe48rtk_pwwtpjpnqrm\"}],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Avg temp by province",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "weather.weather_daily",
+                            "datasource_type": "table",
+                            "id": 3,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"bnbColors\", \"columns\": [], \"contribution\": false, \"datasource\": \"1__table\", \"extra_form_data\": {}, \"groupby\": [\"province\"], \"label_colors\": {}, \"metrics\": [{\"aggregate\": \"AVG\", \"column\": {\"column_name\": \"temp_max\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 6, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"REAL\", \"type_generic\": 0, \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG(temp_max)\", \"optionName\": \"metric_4ufyq8kb1n3_prj05gw6nog\", \"sqlExpression\": null}], \"order_bars\": false, \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"show_legend\": true, \"slice_id\": 3, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 3, \"datasource_name\": \"weather_daily\", \"schema\": \"weather\", \"database_name\": \"PostgreSQL\", \"import_time\": 1638226507}",
+                            "query_context": "{\"datasource\":{\"id\":1,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"province\"],\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\":{\"id\":6,\"column_name\":\"temp_max\",\"verbose_name\":null,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"is_dttm\":false,\"type\":\"REAL\",\"type_generic\":0,\"python_date_format\":null},\"aggregate\":\"AVG\",\"sqlExpression\":null,\"isNew\":false,\"hasCustomLabel\":false,\"label\":\"AVG(temp_max)\",\"optionName\":\"metric_4ufyq8kb1n3_prj05gw6nog\"}],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Max temp by province",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "weather.weather_daily",
+                            "datasource_type": "table",
+                            "id": 4,
+                            "params": "{\"adhoc_filters\": [], \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [], \"datasource\": \"1__table\", \"extra_form_data\": {}, \"groupby\": [\"province\"], \"label_colors\": {}, \"metrics\": [{\"aggregate\": \"AVG\", \"column\": {\"column_name\": \"temp_min\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 7, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"REAL\", \"type_generic\": 0, \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"AVG(temp_min)\", \"optionName\": \"metric_oewm6zqowbd_wnkvandpmth\", \"sqlExpression\": null}], \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": true, \"show_legend\": true, \"slice_id\": 4, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 4, \"datasource_name\": \"weather_daily\", \"schema\": \"weather\", \"database_name\": \"PostgreSQL\", \"import_time\": 1638226507}",
+                            "query_context": "{\"datasource\":{\"id\":1,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"province\"],\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\":{\"id\":7,\"column_name\":\"temp_min\",\"verbose_name\":null,\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"is_dttm\":false,\"type\":\"REAL\",\"type_generic\":0,\"python_date_format\":null},\"aggregate\":\"AVG\",\"sqlExpression\":null,\"isNew\":false,\"hasCustomLabel\":false,\"label\":\"AVG(temp_min)\",\"optionName\":\"metric_oewm6zqowbd_wnkvandpmth\"}],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Min temp by province",
+                            "viz_type": "dist_bar"
+                        }
+                    },
+                    {
+                        "__Slice__": {
+                            "cache_timeout": null,
+                            "datasource_name": "weather.weather_daily",
+                            "datasource_type": "table",
+                            "id": 5,
+                            "params": "{\"adhoc_filters\": [], \"bar_stacked\": true, \"bottom_margin\": \"auto\", \"color_scheme\": \"supersetColors\", \"columns\": [\"weather_main\"], \"contribution\": false, \"datasource\": \"1__table\", \"extra_form_data\": {}, \"granularity_sqla\": null, \"groupby\": [\"province\"], \"label_colors\": {}, \"metrics\": [{\"aggregate\": \"COUNT\", \"column\": {\"column_name\": \"weather_main\", \"description\": null, \"expression\": null, \"filterable\": true, \"groupby\": true, \"id\": 4, \"is_dttm\": false, \"python_date_format\": null, \"type\": \"TEXT\", \"type_generic\": 1, \"verbose_name\": null}, \"expressionType\": \"SIMPLE\", \"hasCustomLabel\": false, \"isNew\": false, \"label\": \"COUNT(weather_main)\", \"optionName\": \"metric_0kfdppqhslj_yoyd7dmeoqp\", \"sqlExpression\": null}], \"order_bars\": true, \"order_desc\": true, \"row_limit\": 10000, \"show_bar_value\": false, \"show_legend\": true, \"slice_id\": 5, \"time_range\": \"No filter\", \"time_range_endpoints\": [\"inclusive\", \"exclusive\"], \"url_params\": {}, \"viz_type\": \"dist_bar\", \"x_ticks_layout\": \"auto\", \"y_axis_bounds\": [null, null], \"y_axis_format\": \"SMART_NUMBER\", \"remote_id\": 5, \"datasource_name\": \"weather_daily\", \"schema\": \"weather\", \"database_name\": \"PostgreSQL\", \"import_time\": 1638226507}",
+                            "query_context": "{\"datasource\":{\"id\":1,\"type\":\"table\"},\"force\":false,\"queries\":[{\"time_range\":\"No filter\",\"granularity\":null,\"filters\":[],\"extras\":{\"time_range_endpoints\":[\"inclusive\",\"exclusive\"],\"having\":\"\",\"having_druid\":[],\"where\":\"\"},\"applied_time_extras\":{},\"columns\":[\"province\",\"weather_main\"],\"metrics\":[{\"expressionType\":\"SIMPLE\",\"column\":{\"column_name\":\"weather_main\",\"description\":null,\"expression\":null,\"filterable\":true,\"groupby\":true,\"id\":4,\"is_dttm\":false,\"python_date_format\":null,\"type\":\"TEXT\",\"type_generic\":1,\"verbose_name\":null},\"aggregate\":\"COUNT\",\"sqlExpression\":null,\"isNew\":false,\"hasCustomLabel\":false,\"label\":\"COUNT(weather_main)\",\"optionName\":\"metric_0kfdppqhslj_yoyd7dmeoqp\"}],\"annotation_layers\":[],\"row_limit\":10000,\"timeseries_limit\":0,\"order_desc\":true,\"url_params\":{},\"custom_params\":{},\"custom_form_data\":{}}],\"result_format\":\"json\",\"result_type\":\"full\"}",
+                            "slice_name": "Weather distribution",
+                            "viz_type": "dist_bar"
+                        }
+                    }
+                ],
+                "slug": null
+            }
+        }
+    ],
+    "datasources": [
+        {
+            "__SqlaTable__": {
+                "cache_timeout": null,
+                "columns": [
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "column_name": "dt",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 1,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "INTEGER",
+                            "uuid": "52511a58-610e-4653-932e-6c0fd28263e0",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "column_name": "province",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 2,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "TEXT",
+                            "uuid": "48036dd5-6be8-401e-bf82-93ae3c820853",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "column_name": "weather_main",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 3,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "TEXT",
+                            "uuid": "83e3f6d9-fb31-46b9-b5c3-b5f2feef3466",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "column_name": "weather_desc",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 4,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "TEXT",
+                            "uuid": "48b09033-134f-48d5-9bd4-c10d45972eff",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "column_name": "temp_max",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 5,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "REAL",
+                            "uuid": "66c8685d-770c-4be5-adde-acc34782ba35",
+                            "verbose_name": null
+                        }
+                    },
+                    {
+                        "__TableColumn__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "column_name": "temp_min",
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "description": null,
+                            "expression": null,
+                            "filterable": true,
+                            "groupby": true,
+                            "id": 6,
+                            "is_active": true,
+                            "is_dttm": false,
+                            "python_date_format": null,
+                            "table_id": 1,
+                            "type": "REAL",
+                            "uuid": "614bc45d-4ac7-4183-8cf2-86942f0fb6aa",
+                            "verbose_name": null
+                        }
+                    }
+                ],
+                "database_id": 1,
+                "default_endpoint": null,
+                "description": null,
+                "extra": null,
+                "fetch_values_predicate": null,
+                "filter_select_enabled": false,
+                "main_dttm_col": null,
+                "metrics": [
+                    {
+                        "__SqlMetric__": {
+                            "changed_by_fk": 1,
+                            "changed_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "created_by_fk": 1,
+                            "created_on": {
+                                "__datetime__": "2021-11-29T22:55:07"
+                            },
+                            "d3format": null,
+                            "description": null,
+                            "expression": "COUNT(*)",
+                            "extra": "{\"warning_markdown\":\"\"}",
+                            "id": 1,
+                            "metric_name": "count",
+                            "metric_type": null,
+                            "table_id": 1,
+                            "uuid": "3b3e6e7b-e720-4d8f-b5b7-3f223264aa4f",
+                            "verbose_name": "COUNT(*)",
+                            "warning_text": null
+                        }
+                    }
+                ],
+                "offset": 0,
+                "params": "{\"remote_id\": 1, \"database_name\": \"PostgreSQL\", \"import_time\": 1638226507}",
+                "schema": "weather",
+                "sql": "",
+                "table_name": "weather_daily",
+                "template_params": null
+            }
+        }
+    ]
+}
